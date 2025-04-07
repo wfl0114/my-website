@@ -3,8 +3,8 @@ node_modules/
 .DS_Store
 
 # 构建输出
-.vitepress/dist/
-.vitepress/cache/
+dist
+cache
 
 # 环境变量
 .env

@@ -4,14 +4,15 @@ layout: home
 
 hero:
   name: "My Website"
-  text: "A VitePress Site"
-  tagline: My great project tagline
+  text: ""
+  tagline: 记录生活与技术
   actions:
     - theme: brand
-      text: Markdown Examples
+      text: 前端
       link: /markdown-examples
+
     - theme: alt
-      text: API Examples
+      text: 生活
       link: /api-examples
 
 features:
@@ -22,4 +23,3 @@ features:
   - title: Feature C
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
-
