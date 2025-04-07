@@ -6,7 +6,7 @@ titleTemplate: Vite Library
 
 hero:
   name: Vite
-  text: 下一代的前端工具链
+  text: 下一代的前端工具链11
   tagline: 为开发提供极速响应 v4.4.9
   image:
     src: /vite.png
