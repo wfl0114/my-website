@@ -14,7 +14,7 @@
 
   - 常见内核
 
-    - Trident(IE) 、Gecko(firefox)、webkit(Safari) 、Chromium/Blink(chrome) 、 Presto(Opera)
+    - Trident（IE） 、Gecko（firefox）、webkit（Safari） 、Chromium/Blink（chrome）、 Presto（Opera）
 
   - 移动端系统内置浏览器内核
 
@@ -26,18 +26,16 @@
 
 Sublime、Webstorm10、Visual Studio Code、HBuilder、Dreamweaver
 
-## 文档类型<!DOCTYPE>
+### 文档类型<!DOCTYPE>
 
 ```html
 <!-- html5 版本 -->
 <!DOCTYPE html>
 ```
 
-## 字符
-
 ### 字符集
 
-统一使用 UTF-8 字符集
+统一使用 `UTF-8` 字符集
 
 > utf-8 是目前最常用的字符集编码方式，常用的字符集编码方式还有 gbk 和 gb2312。
 >
@@ -69,18 +67,17 @@ Sublime、Webstorm10、Visual Studio Code、HBuilder、Dreamweaver
 
 ## HTML 基础
 
-### 认识 HTML
+### Web 标准
 
-- Web 标准
+- `结构标准` - html（超文本标记语言）
 
-  - `结构标准` - html（超文本标记语言）
+- `表现标准` - css
 
-  - `表现标准` - css
+- `行为标准` - Javascript
 
-  - `行为标准` - Javascript
+### HTML 骨架结构
 
 ```html
-<!-- HTML 骨架格式 -->
 <html>
   <head>
     <title></title>
@@ -89,30 +86,77 @@ Sublime、Webstorm10、Visual Studio Code、HBuilder、Dreamweaver
 </html>
 ```
 
+### HTML 标签
+
 ```html
-<!-- HTML 标签 -->
 <标签 属性="值">
 ```
 
-- HTML 标签分类
-
-  - 双标签 开始标签与结束标签
-  - 单标签 也称空标签
-
-- HTML 标签关系
-
-  - 嵌套（包含）关系
-  - 并列关系
-
-## HTML 标签
-
-### 语义化标签
+### 标签语义化
 
 - 方便代码的阅读和维护
 - 同时让浏览器或是网络爬虫可以很好地解析，从而更好分析其中的内容
 - 使用语义化标签会具有更好地搜索引擎优化
 
-### 标题标签
+### HTML 标签分类
+
+- 双标签 开始标签与结束标签
+- 单标签 也称空标签
+
+### HTML 标签关系
+
+- 嵌套（包含）关系
+- 并列关系
+
+### 路径
+
+- 相对路径
+
+```html
+<!-- 同级向下 -->
+"img01/img02/img001.jpg"
+
+<!-- 同级向上 -->
+"../../img001.jpg"
+```
+
+- 绝对路径
+
+```html
+<!-- 本地 -->
+"D:\web\img\logo.gif"
+
+<!-- 线上  -->
+"http://www.itcast.cn/images/logo.gif"
+```
+
+### 注释
+
+切换注释语句：`ctrl + /`
+
+<!-- 或者 `alt + shift + A` 或者 `ctrl + shift + /` -->
+
+```html
+<!-- 这是注释内容 -->
+```
+
+```css
+/* 这是注释内容 */
+```
+
+```js
+// 这是注释内容
+
+/**
+ * 这是注释内容
+ */
+```
+
+> js 中多行注释：/\*\* + enter
+
+## HTML 标签
+
+### 标题标签 h1~h6
 
 ```html
 <h1></h1>
@@ -123,25 +167,25 @@ Sublime、Webstorm10、Visual Studio Code、HBuilder、Dreamweaver
 <h6></h6>
 ```
 
-### 段落标签
+### 段落标签 p
 
 ```html
 <p>文本内容</p>
 ```
 
-### 水平线标签
+### 水平线标签 hr
 
 ```html
 <hr />
 ```
 
-### 换行标签
+### 换行标签 br
 
 ```html
 <br />
 ```
 
-### 没有语义的标签
+### 无语义标签 div/span
 
 ```html
 <!-- div 独占一行 -->
@@ -173,7 +217,7 @@ Sublime、Webstorm10、Visual Studio Code、HBuilder、Dreamweaver
 <sub></sub>
 ```
 
-### 图像标签
+### 图像标签 img
 
 ```html
 <img
@@ -186,12 +230,7 @@ Sublime、Webstorm10、Visual Studio Code、HBuilder、Dreamweaver
 />
 ```
 
-### 超链接标签
-
-- href：指定链接目标的 url 地址
-- target：指定链接页面的打开方式
-  - \_self 默认当前页面
-  - \_blank 新页面
+### 超链接标签 a
 
 ```html
 <a href="跳转目标" target="目标窗口的弹出方式">目标</a>
@@ -206,15 +245,38 @@ Sublime、Webstorm10、Visual Studio Code、HBuilder、Dreamweaver
 <a href="#">目标</a>
 ```
 
-<!-- - base 标签内设置整体页面的打开方式
+- href：指定链接目标的 url 地址
+- target：指定链接页面的打开方式
+  - \_self 默认当前页面
+  - \_blank 新页面
 
-  ```html
-  <head></head>中base标签 <base target="_blank" />
-  ```
+### 锚点
 
-- 文本、图片、视频、音频等元素 -->
+> id：唯一标识符
 
-### 列表标签
+```html
+<!-- 1 设置锚点 -->
+<p id="标记">目标</p>
+
+<!-- 2 找到锚点 -->
+<a herf="#标记">目标</a>
+```
+
+### 目标链接标签 base
+
+整体页面链接的打开式，写到 `head标签`之间，把所有的跳转链接都默认添加 `target="_blank"`，整体控制文本、图片、视频、音频等元素
+
+```html
+<head>
+  <base target="_blank" />
+</head>
+```
+
+- 在一个文档中，最多能使用一个 base 元素
+- base 标签必须位于 head 元素内部
+- base 标签是单标签
+
+### 列表标签 ul/ol
 
 > ul/ol 只能嵌套 li
 >
@@ -331,10 +393,12 @@ Sublime、Webstorm10、Visual Studio Code、HBuilder、Dreamweaver
 ### 表单标签 form
 
 ```html
-<form action="url地址" method="提交方式" name="表单名称">表单控件</form>
+<form action="url地址" method="提交方式" name="表单名称">
+  <!-- 表单控件 -->
+</form>
 ```
 
-在 HTML 中，一个完整的表单通常由表单控件（也称为表单元素）、提示信息和表单域 3 个部分构成
+在 HTML 中，一个完整的表单通常由表单域、提示信息、表单控件 3 个部分构成
 
 - 表单域（form）
 
@@ -355,69 +419,52 @@ Sublime、Webstorm10、Visual Studio Code、HBuilder、Dreamweaver
   - put
   - delete
 
-### 输入框 input
+### 表单元素输入框 input/label
 
-| 属性      | 属性值     | 描述                       |
-| --------- | ---------- | -------------------------- |
-| type      | text       | 单行文本输入框             |
-| type      | password   | 密码输入框                 |
-| type      | radio      | 单选按钮                   |
-| type      | checkbox   | 复选框                     |
-| type      | button     | 普通按钮                   |
-| type      | submit     | 提交按钮                   |
-| type      | reset      | 重置按钮                   |
-| type      | image      | 图像形式的提交按钮         |
-| type      | file       | 文件域                     |
-| name      | 用户自定义 | 控件的名称                 |
-| value     | 用户自定义 | input 控件的默认文本值     |
-| size      | 正整数     | input 控件在页面中显示宽度 |
-| checked   | checked    | 默认被选中的选择控件       |
-| maxlength | 正整数     | 允许输入的最大字符数       |
+| 控件类型 | 类型值   | 描述               | 备注  |
+| -------- | -------- | ------------------ | ----- |
+| type     | text     | 单行文本输入框     |       |
+| type     | password | 密码输入框         |       |
+| type     | radio    | 单选按钮           |       |
+| type     | checkbox | 复选框             |       |
+| type     | button   | 普通按钮           |       |
+| type     | submit   | 提交按钮           |       |
+| type     | reset    | 重置按钮           |       |
+| type     | image    | 图像形式的提交按钮 |       |
+| type     | file     | 文件域选择按钮     |       |
+| type     | email    | 邮箱格式输入框     | HTML5 |
+| type     | tel      | 手机号码输入框     | HTML5 |
+| type     | url      | url 格式输入框     | HTML5 |
+| type     | number   | 数字输入框         | HTML5 |
+| type     | date     | 日期输入框         | HTML5 |
+
+| 控件属性     | 属性值         | 描述                 | 备注  |
+| ------------ | -------------- | -------------------- | ----- |
+| name         | 自定义         | 控件的名称           |       |
+| value        | 自定义         | 默认文本值           |       |
+| size         | 正整数         | 在页面中显示宽度     |       |
+| checked      | checked        | 默认被选中的选择控件 |       |
+| multiple     | multiple       | 多选                 |       |
+| maxlength    | 正整数         | 输入的最大字符数     |       |
+| placeholder  | 自定义         | 灰色占位符           | HTML5 |
+| autofocus    | autofocus      | 自动获得焦点         | HTML5 |
+| autocomplete | off（默认 on） | 自动完成             | HTML5 |
+| required     | required       | 必填项               | HTML5 |
+
+```html
+<!-- 绑定一个表单元素，点击获得输入焦点 -->
+<input id="male" type="radio" name="sex" value="male" />
+<label for="male">Male</label>
+```
 
 - `input标签`为单标签
-- 多选 multiple
-- 提示信息 placeholder="灰色字体内容"
-- 默认选中项 checked="checked" 可简写为 checked
+- 属性和值一样时尽量简写，例如 checked="checked" 可简写为 checked
 - :checked 表示检测选中的表单元素
 - 单选按钮实现单选效果，将单选的 name 值设置相同，name="gender"
-- 清除轮廓线 outline: none / 0;
-- 获取光标焦点的状态 input: focus;
+- 获取光标焦点的状态样式 input: focus;
+- 清除轮廓线样式 outline: none / 0;
 
-```html
-<!-- 输入邮箱格式 -->
-<input type="email" />
-
-<!-- 输入手机号码格式 -->
-<input type="tel" />
-
-<!-- 输入 url 格式 -->
-
-<input type="url" />
-
-<!-- 输入数字格式 -->
-<input type="number" />
-
-<!-- 输入日期 -->
-<input type="date" />
-```
-
-- H5 扩展表单属性
-
-```html
-<!-- 占位符 -->
-<input type="text" placeholder="请输入用户名" />
-
-<!-- 自动获得焦点 -->
-<input type="text" autofocus />
-
-<!-- 自动完成 -->
-<input type="text" autocomplete="off（默认 on）" />
-
-<!-- 必填项 -->
-<input type="text" required />
-```
-
-### 文本域 textarea
+### 表单元素文本域 textarea
 
 ```html
 <textarea cols="每行中的字符数" rows="显示的行数">文本内容</textarea>
@@ -432,7 +479,7 @@ Sublime、Webstorm10、Visual Studio Code、HBuilder、Dreamweaver
   - horizontal 只可以调节宽度
   - inherit 只可以调节高度
 
-### 下拉菜单 select
+### 表单元素下拉菜单 select/option
 
 ```html
 <select>
@@ -443,73 +490,46 @@ Sublime、Webstorm10、Visual Studio Code、HBuilder、Dreamweaver
 </select>
 ```
 
-- selected = "selected" 默认选中项
 - select 里至少要包含一项 option
+- selected = "selected" 默认选中项
 
-### 标签 label
+### 布局标签（HTML5）
 
 ```html
-<label for="male">Male</label>
-<input type="radio" name="sex" id="male" value="male" />
+<!-- 头部 -->
+<header></header>
+
+<!-- 导航 -->
+<nav></nav>
+
+<!-- 文章 -->
+<article></article>
+
+<!-- 侧边栏 -->
+<aside></aside>
+
+<!-- 区块 -->
+<section></section>
+
+<!-- 底部 -->
+<footer></footer>
 ```
 
-绑定一个表单元素，点击获得输入焦点
+- 创建自定义标签
 
-### H5 扩展布局标签（语义化标签）
+```js
+document.createElement("tagName");
+```
 
-- 头部
+- 检测 IE 版本，加载第三方 JS 库
 
-  ```html
-  <header></header>
-  ```
+```js
+<!--[if lte IE 8]>
+  <script src="./libs/html5shiv.min.js"></script>
+<![endif]-->
+```
 
-- 导航
-
-  ```html
-  <nav></nav>
-  ```
-
-- 文章
-
-  ```html
-  <article></article>
-  ```
-
-- 侧边栏
-
-  ```html
-  <aside></aside>
-  ```
-
-- 区块
-
-  ```html
-  <section></section>
-  ```
-
-- 底部
-
-  ```html
-  <footer></footer>
-  ```
-
-- IE9 以下兼容处理
-
-  - 创建自定义标签
-
-    ```
-    document.createElement('tagName')
-    ```
-
-  - 检测 IE 版本，加载第三方 JS 库
-
-    ```html
-    <!--[if lte IE 8]>
-      <script src="./libs/html5shiv.min.js"></script>
-    <![endif]-->
-    ```
-
-### H5 扩展音频标签
+### 音频标签（HTML5）
 
 ```html
 <audio src="a.mp3"></audio>
@@ -518,20 +538,24 @@ Sublime、Webstorm10、Visual Studio Code、HBuilder、Dreamweaver
 - autoplay 自动播放
 - controls 是否显不默认播放控件
 - loop 循环播放
-- 多浏览器解决方案:
 
-  ![](https://gitee.com/wfl0114/image-hosting/raw/master/img/2022/202202141023021.png)
+|    格式    |  IE 9  | Firefox 3.5 | Opera 10.5 | Chrome 3.0 | Safari 3.0 |
+| :--------: | :----: | :---------: | :--------: | :--------: | :--------: |
+| Ogg Vorbis | 不支持 |    支持     |    支持    |    支持    |   不支持   |
+|    MP3     |  支持  |   不支持    |   不支持   |    支持    |    支持    |
+|    Wav     | 不支持 |    支持     |    支持    |   不支持   |    支持    |
 
-  ```html
-  <audio controls>
-    <source src="a.mp3" />
-    <source src="a.wav" />
-    <source src="a.ogg" />
-    您的浏览器版本过低,请升级
-  </audio>
-  ```
+```html
+<!-- 多浏览器解决方案 -->
+<audio controls>
+  <source src="a.mp3" />
+  <source src="a.wav" />
+  <source src="a.ogg" />
+  您的浏览器版本过低,请升级
+</audio>
+```
 
-### H5 扩展视频标签
+### 视频标签（HTML5）
 
 ```html
 <video src="a.mp4"></video>
@@ -542,57 +566,18 @@ Sublime、Webstorm10、Visual Studio Code、HBuilder、Dreamweaver
 - loop 循环播放
 - width 设置播放窗口宽度
 - height 设置播放窗口的高度
-- 多浏览器解决方案:
 
-  ![](https://gitee.com/wfl0114/image-hosting/raw/master/img/2022/202202141024202.png)
-
-  ```html
-  <video>
-    <source src="movie.mp4" />
-    <source src="movie.ogg" />
-    <source src="movie.webm" />
-  </video>
-  ```
-
-### 锚点
+| 格式   | IE     | Firefox | Opera  | Chrome | Safari |
+| ------ | ------ | ------- | ------ | ------ | ------ |
+| Ogg    | 不支持 | 3.5+    | 10.5+  | 5.0+   | 不支持 |
+| MPEG 4 | 9.0+   | 不支持  | 不支持 | 5.0+   | 3.0+   |
+| WebM   | 不支持 | 4.0+    | 10.6+  | 6.0+   | 不支持 |
 
 ```html
-<!-- 1 设置锚点 -->
-<p id="标记">目标</p>
-
-<!-- 2 找到锚点 -->
-<a herf="#标记">目标</a>
-```
-
-### 路径
-
-- 相对路径
-
-```html
-<!-- 同级向下 -->
-"img01/img02/img001.jpg"
-
-<!-- 同级向上 -->
-"../../img001.jpg"
-```
-
-- 绝对路径
-
-```html
-<!-- 本地 -->
-"D:\web\img\logo.gif"
-
-<!-- 线上  -->
-"http://www.itcast.cn/images/logo.gif"
-```
-
-### base 标签
-
-可以设置整体链接的打开状态，写到 `head标签`之间，把所有的跳转链接都默认添加 `target="_blank"`
-
-### 注释标签
-
-```html
-<!-- 注释语句 -->
-ctrl + / 或者 ctrl +shift + /
+<!-- 多浏览器解决方案 -->
+<video>
+  <source src="movie.mp4" />
+  <source src="movie.ogg" />
+  <source src="movie.webm" />
+</video>
 ```

@@ -6,19 +6,21 @@
 
 [Node.js](https://nodejs.org/zh-cn) 18+
 
-## 安装
+## 初始化
+
+### 安装
 
 ```bash
-npm add -D vitepress
+$ npm add -D vitepress
 ```
 
-## 安装向导
+### 构建向导
 
 ```bash
-npx vitepress init
+$ npx vitepress init
 ```
 
-```painter
+```
 ┌  Welcome to VitePress!
 │
 ◇  Where should VitePress initialize the config?
@@ -48,10 +50,10 @@ npx vitepress init
 ◇  Prefix for VitePress npm scripts:
 │  docs
 │
-└  Done! Now run pnpm run docs:dev and start writing.
+└  Done! Now run npm run docs:dev and start writing.
 ```
 
-## 文件结构
+### 文件结构
 
 ```bash
 .
@@ -64,7 +66,7 @@ npx vitepress init
 └─ package.json
 ```
 
-## 手动添加配置文件
+<!-- ### 添加配置文件
 
 ```bash
 ├── docs
@@ -72,11 +74,23 @@ npx vitepress init
 │   │   ├── config.ts
 │   │   └── theme
 │   │       └── Layout.vue
-│   ├── .gitignore
 │   ├── index.md
-│   └── README.md
 ├── package.json
-└── tsconfig.json
+├── .gitignore
+# └── tsconfig.json
+``` -->
+
+### 更改配置
+
+```json
+"scripts": {
+  "dev": "vitepress dev docs --open",
+  "build": "vitepress build docs",
+  "preview": "vitepress preview docs --port 8080",
+  "docs:dev": "vitepress dev docs",
+  "docs:build": "vitepress build docs",
+  "docs:preview": "vitepress preview docs"
+}
 ```
 
 ## 基本配置
@@ -84,3 +98,17 @@ npx vitepress init
 ```
 
 ```
+
+## 部署
+
+### 构建
+
+```bash
+$ npm run docs:build
+```
+
+输出目录： `docs/.vitepress/dist`
+
+### GitHub Pages
+
+https://vitepress.dev/zh/guide/deploy#github-pages
