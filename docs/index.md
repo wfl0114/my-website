@@ -8,8 +8,12 @@ hero:
   tagline: 记录生活与技术
   actions:
     - theme: brand
-      text: 前端
+      text: 前端学习笔记
       link: /markdown-examples
+
+    - theme: alt
+      text: 生活
+      link: /api-examples
 
     - theme: alt
       text: 生活
